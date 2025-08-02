@@ -141,11 +141,11 @@ footer {
 @media (max-width: 599px) {
   .productos-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
-    gap: 15px; /* Reducir el espacio entre las tarjetas */
+    gap: 10px; /* Reducir el espacio entre las tarjetas */
   }
 
   .producto-card {
-    max-width: 250px; /* Ajustar el tamaño de las tarjetas */
+    max-width: 300px; /* Ajustar el tamaño de las tarjetas */
   }
 }
 
