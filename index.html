@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles K&y</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href=""><h1>MultiShop</h1></a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#sobre">Sobre Nosotras</a>
+      
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <img src="./logo.jpeg" class="logo" alt="Letrero Bienvenidos">
+  </section>
+
+  <section class="productos" id="productos">
+    <h3 style="margin-top: 20px;">Nuestros Productos</h3>
+    <div class="cards">
+      <div class="card">
+        <a href="./llaveros.html"><img src="./imagen/flores/1.jpeg" alt="Arreglo floral"></a>
+        <p>Llaveros de Flores</p>
+      </div>
+      <div class="card">
+        <a href="./regalo.html"><img src="./imagen/regalo/2.jpeg" alt="Regalos"></a>
+        <p>Regalos</p>
+      </div>
+      <div class="card">
+        <a href="papa.html"><img src="./imagen/papa/1.jpeg" alt="Papá"></a>
+        <p>Papá</p>
+      </div>
+      <div class="card">
+        <a href="./mama.html"><img src="./imagen/mama/1.jpeg" alt="Mamá"></a>
+        <p>Mamá</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <img src="./imagen/logo.jpeg" alt="Taza personalizada">
+    <div>
+      <h3>Sobre Nosotras</h3>
+      <p>Somos una empresa en San José de Ocoa dedicada a crear detalles únicos y especiales para cada ocasión. Nuestro compromiso es brindar productos de calidad y un servicio personalizado a nuestros clientes.</p>
+    </div>
+  </section>
+
+<section class="diseño" id="diseño">
+    <h3 style="text-align: center; padding: 20px;">Elige tu diseño</h3>
+    <form id="form-diseño">
+      <label for="producto">Elige el producto:</label>
+      <select id="producto" name="producto">
+        <option value="Llaveros de Flores">Llaveros de Flores</option>
+        <option value="Regalos">Regalos</option>
+        <option value="Para Papá">Para Papá</option>
+        <option value="Para Mamá">Para Mamá</option>
+      </select>
+      
+      <label for="mensaje">Mensaje personalizado:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+      
+      <button type="submit">Enviar a WhatsApp</button>
+    </form>
+</section>
+
+<script>
+  document.getElementById('form-diseño').addEventListener('submit', function(event) {
+    event.preventDefault();  // Evitar que el formulario se envíe de forma tradicional
+    
+    const producto = document.getElementById('producto').value;
+    const mensaje = document.getElementById('mensaje').value;
+    
+    const telefono = '18493543675';  // Aquí va tu número de WhatsApp en formato internacional (sin '+')
+    const mensajeFinal = `¡Hola! Quiero personalizar un producto. Aquí están los detalles:\n\nProducto: ${producto}\nMensaje: ${mensaje}`;
+    
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensajeFinal)}`;
+    
+    window.open(url, '_blank');  // Abre el enlace de WhatsApp en una nueva ventana
+  });
+</script>
+
+
+  <footer>
+    <p>&copy; 2025 Detalles K&y. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
